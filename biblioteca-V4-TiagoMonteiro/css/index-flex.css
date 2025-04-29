@@ -1,0 +1,283 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+    padding-bottom: 3em;
+}
+
+body > h1 {
+    margin: 1em 0;
+    font-size: 2.5em;
+    color: #2e5c2d;
+}
+
+section.filters {
+    background-color: #e9f5e6;
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    border-bottom: 1px solid #ccc;
+}
+
+section.filters .btn {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 0.6em 1.2em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+section.filters .btn:hover {
+    background-color: #45a047;
+}
+
+input.searchTxt {
+    padding: 0.6em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 250px;
+}
+
+/* Grid de livros */
+section.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+    padding: 2em;
+}
+
+section.grid article {
+    background-color: white;
+    padding: 1.5em;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+section.grid article:hover {
+    transform: scale(1.02);
+}
+
+section.grid article > h1 {
+    font-size: 1.3em;
+    color: #4caf50;
+}
+
+section.grid article > h2 {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 1em;
+}
+
+section.grid article img {
+    border-radius: 6px;
+    margin-bottom: 1em;
+}
+
+section.grid article p {
+    font-size: 1.1em;
+    margin: 0.5em 0;
+}
+
+section.grid article .btn {
+    margin: 0.3em;
+    background-color: #ff7043;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+section.grid article .btn:hover {
+    background-color: #e65c2b;
+}
+
+section.popup {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 999;
+}
+
+section.popup.open {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+img.thumbnail {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+img.thumbnail:hover {
+    transform: scale(1.05);
+}
+
+.addBookSection {
+    margin: 3em auto;
+    text-align: center;
+}
+
+.addBookSection button#toggleFormBtn {
+    margin-bottom: 2em;
+    padding: 0.7em 1.5em;
+    font-size: 1rem;
+    border-radius: 6px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.addBookSection form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    background-color: white;
+    padding: 2em;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.addBookSection form .btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.7em 1.5em;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.addBookSection form .btn:hover {
+    background-color: #43a047;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    justify-content: center;
+}
+
+.form-group label {
+    width: 140px;
+    text-align: right;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"] {
+    flex: 1;
+    padding: 0.6em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.form-group inpu
+
+section.grid article .btn[data-type="deleteBtn"] {
+    background-color: tomato;
+}
+
+section.grid article .btn[data-type="deleteBtn"]:hover {
+    background-color: red;
+}
+
+section.grid article .btn[data-type="editBtn"] {
+    background-color: #4caf50;
+}
+
+section.grid article .btn[data-type="editBtn"]:hover {
+    background-color: #27822b;
+}
+
+.editBookSection h2 {
+    margin-bottom: 1em;
+    color: #4caf50;
+}
+
+/* Popup de edição */
+.editBookSection {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.editBookSection.open {
+    display: flex;
+}
+
+.editPopupContent {
+    background-color: white;
+    padding: 2em;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    animation: popupFade 0.3s ease;
+}
+
+.editPopupContent .btn {
+    margin-top: 10px;
+    background-color: #4caf50;
+    color: white;
+    padding: 0.7em 1.5em;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.editPopupContent .btn:hover {
+    background-color: #43a047;
+}
+
+
+@keyframes popupFade {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.editBookSection h2 {
+    margin-bottom: 1em;
+    color: #4caf50;
+}
